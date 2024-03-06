@@ -5,14 +5,18 @@ const SignupForm = () => {
     return 0;
   }
   const [formData, setformData] = useState({ firstName:"" , password : "" , lastName:"", email:""})
+  const [accountType, setAccountType] = useState("student")
+
   return (
     <div>
       {/* Student Instructor tab  */}
       <div>
-        <button>
+        <button className={`${accountType === "student" ? "bg-richblack-900 text-richblack-5":"bg-transparent text-richblack-200"} py-2 px-5 rounded-full transition-all duration-200 `}
+        onClick={()=> setAccountType("student")}>
           Student
         </button>
-        <button>
+        <button className={`${accountType === "instructor" ? "bg-richblack-900 text-richblack-5":"bg-transparent text-richblack-200"} py-2 px-5 rounded-full transition-all duration-200 `}
+        onClick={()=> setAccountType("instructor")}>
           Instructor
         </button>
       </div>
